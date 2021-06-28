@@ -9,6 +9,7 @@
   "author": "Jani Heinikoski",
   "license": "MIT",
   "dependencies": {
+    "gh-pages": "^3.2.3",
     "node-sass": "^5.0.0"
   }
 }
