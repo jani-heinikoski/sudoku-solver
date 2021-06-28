@@ -1,0 +1,167 @@
+<!--Author: Jani Heinikoski
+Last modified: 06.03.2021
+Sources:-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/9a692c5984.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Visual Sudoku Solver - Solver</title>
+  </head>
+  <body id="bg-dark">
+    <header id="main-header">
+      <div class="hamburger-menu">
+        <div class="hamburger-menu-line top-line"></div>
+        <div class="hamburger-menu-line mid-line"></div>
+        <div class="hamburger-menu-line bot-line"></div>
+      </div>
+    </header>
+    <nav class="menu">
+      <ul class="menu-nav">
+        <li class="menu-nav-item">
+          <a href="./index.html" class="menu-nav-link">Home Page</a>
+        </li>
+        <li class="menu-nav-item current">
+          <a href="" class="menu-nav-link">Sudoku Solver</a>
+        </li>
+      </ul>
+    </nav>
+    <footer id="main-footer">
+      <span>Jani Heinikoski, 2021</span>
+      <a
+        href="https://github.com/jani-heinikoski/sds_front_end"
+        class="fab fa-github fa-2x"
+      ></a>
+    </footer>
+  </body>
+  <main>
+    <h1 class="lg-heading">Welcome to the online Sudoku Solver!</h1>
+    <p>Enter your sudoku in the grid below and hit solve and let us do the work!</p>
+    <div class="sudoku-container">
+      <div class = "game-grid">
+        <!-- Next row! -->
+        <div class="row">
+          <input type="number" min="1" max="9" id="11" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="12" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="13" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="14" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="15" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="16" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="17" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="18" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="19" class="sudoku-cell">
+        </div>
+        <!-- Next row! -->
+        <div class="row">
+          <input type="number" min="1" max="9" id="21" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="22" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="23" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="24" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="25" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="26" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="27" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="28" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="29" class="sudoku-cell">
+        </div>
+        <!-- Next row! -->
+        <div class="row">
+          <input type="number" min="1" max="9" id="31" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="32" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="33" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="34" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="35" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="36" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="37" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="38" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="39" class="sudoku-cell">
+        </div>
+        <!-- Next row! -->
+        <div class="row">
+          <input type="number" min="1" max="9" id="41" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="42" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="43" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="44" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="45" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="46" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="47" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="48" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="49" class="sudoku-cell">
+        </div>
+        <!-- Next row! -->
+        <div class="row">
+          <input type="number" min="1" max="9" id="51" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="52" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="53" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="54" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="55" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="56" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="57" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="58" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="59" class="sudoku-cell">
+        </div>
+        <!-- Next row! -->
+        <div class="row">
+          <input type="number" min="1" max="9" id="61" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="62" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="63" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="64" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="65" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="66" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="67" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="68" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="69" class="sudoku-cell">
+        </div>
+        <!-- Next row! -->
+        <div class="row">
+          <input type="number" min="1" max="9" id="71" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="72" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="73" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="74" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="75" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="76" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="77" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="78" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="79" class="sudoku-cell">
+        </div>
+        <!-- Next row! -->
+        <div class="row">
+          <input type="number" min="1" max="9" id="81" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="82" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="83" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="84" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="85" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="86" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="87" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="88" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="89" class="sudoku-cell">
+        </div>
+        <!-- Next row! -->
+        <div class="row">
+          <input type="number" min="1" max="9" id="91" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="92" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="93" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="94" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="95" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="96" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="97" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="98" class="sudoku-cell">
+          <input type="number" min="1" max="9" id="99" class="sudoku-cell">
+        </div>
+      </div>
+    </div>
+    <div class="button-container">
+      <button class="solve btn">Solve</button>
+      <button class="reset btn">Reset</button>
+      <button class="example btn">Load Example</button>
+    </div>
+    <div class="spacing"></div>
+  </main>
+  <script src="./js/main.js"></script>
+  <script src="./js/sudoku.js"></script>
+</html>
