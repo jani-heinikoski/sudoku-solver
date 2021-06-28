@@ -1,0 +1,63 @@
+/*
+Author: Jani Heinikoski
+Last modified: 06.03.2021
+Sources:
+Stackoverflow. 2020. Dynamically change color to lighter or darker by percentage CSS (Javascript). [Website]. [Cited 06.03.2021]. Available: https://stackoverflow.com/questions/1625681/dynamically-change-color-to-lighter-or-darker-by-percentage-css-javascript
+*/
+@import "./config";
+@import "./menu";
+@import "./solver";
+
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+}
+
+body {
+  @include background-common();
+  @include header-common();
+  @include footer-common();
+}
+
+main {
+  @include main-common();
+  div.solver-quick-access {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 32px;
+    &::after {
+      content: "Take me to the solver!";
+      margin-top: 16px;
+      margin-bottom: 16px;
+      font-size: 1.1em;
+      left: 0;
+    }
+    & > a:hover {
+      // (Stackoverflow. 2020. Dynamically change color to lighter or darker by percentage CSS (Javascript).)
+      filter: brightness(150%);
+      transition: filter 0.2s ease-out;
+      cursor: pointer;
+    }
+  }
+}
+
+a.fab {
+  padding: 2px;
+  text-decoration: none;
+  border: 1px solid red;
+  border-radius: 50%;
+  margin-left: 12px;
+  &:hover {
+    // (Stackoverflow. 2020. Dynamically change color to lighter or darker by percentage CSS (Javascript).)
+    filter: brightness(150%);
+    transition: filter 0.2s ease-out;
+  }
+}
+
+.lg-heading {
+  @media screen and (max-width: 600px) {
+    font-size: 20px;
+  }
+}

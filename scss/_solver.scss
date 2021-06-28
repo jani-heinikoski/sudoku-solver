@@ -1,0 +1,144 @@
+/*
+Author: Jani Heinikoski
+Last modified: 12.06.2021
+Sources:
+W3Schools. 2021. How TO - Hide Arrows From Input Number. [Cited 12.06.2021]. Available: https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp 
+*/
+
+/* (W3Schools, 2021) */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* (W3Schools, 2021) */
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.sudoku-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  .game-grid {
+    display: grid;
+    grid-template-rows: repeat(9, 1fr);
+  }
+  .row {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+}
+
+.sudoku-cell {
+  height: 52px;
+  width: 52px;
+  text-align: center;
+  font-size: 24px;
+  @media screen and (max-width: 960px) {
+    width: 42px;
+    height: 42px;
+  }
+  @media screen and (max-width: 600px) {
+    width: 32px;
+    height: 32px;
+  }
+  @media screen and (max-width: 400px) {
+    width: 28px;
+    height: 28px;
+  }
+  @media screen and (max-width: 350px) {
+    width: 20px;
+    height: 20px;
+    font-size: 18px;
+  }
+  @media screen and (max-width: 300px) {
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+  }
+  &:hover {
+    border-color: red;
+    cursor: pointer;
+  }
+}
+
+[id="11"],
+[id="12"],
+[id="13"],
+[id="21"],
+[id="22"],
+[id="23"],
+[id="31"],
+[id="32"],
+[id="33"],
+[id="17"],
+[id="18"],
+[id="19"],
+[id="27"],
+[id="28"],
+[id="29"],
+[id="37"],
+[id="38"],
+[id="39"],
+[id="71"],
+[id="72"],
+[id="73"],
+[id="81"],
+[id="82"],
+[id="83"],
+[id="91"],
+[id="92"],
+[id="93"],
+[id="77"],
+[id="78"],
+[id="79"],
+[id="87"],
+[id="88"],
+[id="89"],
+[id="97"],
+[id="98"],
+[id="99"],
+[id="44"],
+[id="45"],
+[id="46"],
+[id="54"],
+[id="55"],
+[id="56"],
+[id="64"],
+[id="65"],
+[id="66"] {
+  background-color: grey;
+}
+
+.button-container {
+  display: flex;
+  margin-top: 35px;
+  margin-bottom: 50px;
+  flex-direction: column;
+  flex-flow: nowrap;
+  justify-content: center;
+  .btn {
+    margin: 20px 10px 10px 0px;
+    width: 150px;
+    height: 50px;
+    font-family: sans-serif;
+    font-size: 18px;
+    &:hover {
+      background-color: grey;
+      opacity: 1;
+    }
+  }
+}
+
+.spacing {
+  width: 100%;
+  height: 50px;
+}

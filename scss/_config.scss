@@ -1,0 +1,122 @@
+/*
+Author: Jani Heinikoski
+Last modified: 06.03.2021
+Sources:
+*/
+// Global constants (change to modify style)
+$bg-dark-color: #141414;
+
+$header-dark-color: #212121;
+$footer-dark-color: #212121;
+
+$background-opacity: 1;
+$menu-opacity: 0.85;
+
+$header-height: 70px;
+$footer-height: 70px;
+// Body background for each page
+@mixin background-common {
+  background-color: rgba($bg-dark-color, $background-opacity);
+  &#bg-dark::after {
+    content: "";
+    position: absolute;
+    box-sizing: border-box;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+}
+// Main for each page
+@mixin main-common {
+  margin-bottom: #{$footer-height};
+  margin-top: #{$header-height};
+  background-color: $bg-dark-color;
+  color: #fff;
+  top: #{$footer-height};
+  & > h1 {
+    font-size: 2em;
+  }
+  padding-top: 5px;
+  padding-left: 2px;
+}
+// Header for each page
+@mixin header-common {
+  #main-header {
+    background: $header-dark-color;
+    height: $header-height;
+    /* Flexbox to easily center children with align-items property */
+    display: flex;
+    box-sizing: border-box;
+    position: fixed;
+    padding-left: 8px;
+    align-items: center;
+    left: 0;
+    right: 0;
+    top: 0;
+    color: #fff;
+    z-index: 1;
+    // Hamburger menu styling
+    .hamburger-menu {
+      position: relative;
+      cursor: pointer;
+      .hamburger-menu-line {
+        width: 35px;
+        height: 3px;
+        padding: 0;
+        &.top-line,
+        &.mid-line {
+          margin-bottom: 5px;
+        }
+        background-color: #fff;
+      }
+      // Turn the hamb. menu red when hovered
+      &:hover {
+        @for $i from 1 through 3 {
+          :nth-child(#{$i}) {
+            background-color: red;
+            transition: background-color 0.15s ease-out,
+              transform 0.15s ease-out;
+          }
+        }
+      }
+      // Add text content after the hamb. menu
+      &::after {
+        content: "Menu";
+        /* Absolute position so the flex-item centering is calculated
+        solely by the hamburger menu icon */
+        position: absolute;
+        font-size: 0.9em;
+        margin-top: 5px;
+        left: 0;
+      }
+    }
+  }
+}
+// Footer for each page
+@mixin footer-common {
+  #main-footer {
+    background: $footer-dark-color;
+    height: $footer-height;
+    display: flex;
+    box-sizing: border-box;
+    position: fixed;
+    padding-left: 8px;
+    align-items: center;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-top: auto;
+    color: #fff;
+    z-index: 1;
+  }
+}
+// Returns an accessible color based on given arg
+@function set-text-color($bg-color) {
+  @if (lightness($bg-color) > 40) {
+    @return #444;
+  } @else {
+    @return #fff;
+  }
+}
